@@ -4,12 +4,14 @@
 // When size is submitted by the user, call makeGrid()
 
 function makeGrid(e) {
+    // Prevent default submit action from reloading page.
     e.preventDefault();
 
-    grid = $('#pixelCanvas').find('*');
-    grid.each(function() {
+    // Destroy any existing table cells.
+    $('#pixelCanvas').find('*').each(function() {
         $(this).remove();
     });
+
     let h = $("#inputHeight").val();
     let w = $("#inputWidth").val();
 
